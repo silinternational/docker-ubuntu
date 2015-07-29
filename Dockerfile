@@ -9,5 +9,5 @@ RUN apt-get update -y \
     && apt-get clean
 
 # Install s3-expand into path
-curl -o /usr/local/bin/s3-expand https://raw.githubusercontent.com/silinternational/s3-expand/master/expand.sh \
+RUN curl -o /usr/local/bin/s3-expand https://raw.githubusercontent.com/silinternational/s3-expand/master/expand.sh \
     && chmod a+x /usr/local/bin/s3-expand
