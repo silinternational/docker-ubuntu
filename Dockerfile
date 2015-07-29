@@ -5,6 +5,7 @@ ENV REFRESHED_AT 2015-07-29
 
 RUN apt-get update -y \
     && apt-get upgrade -y \
+    && apt-get install -y curl \
     && apt-get clean
 
 # Install s3-expand into path
