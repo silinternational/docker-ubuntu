@@ -11,3 +11,7 @@ RUN apt-get update -y \
 # Install s3-expand into path
 RUN curl -o /usr/local/bin/s3-expand https://raw.githubusercontent.com/silinternational/s3-expand/master/expand.sh \
     && chmod a+x /usr/local/bin/s3-expand
+
+# Install runny into path
+RUN curl -o /usr/local/bin/runny https://raw.githubusercontent.com/silinternational/runny/0.1/runny \
+    && chmod a+x /usr/local/bin/runny
