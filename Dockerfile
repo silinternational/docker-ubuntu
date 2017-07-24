@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:16.04
 MAINTAINER "Phillip Shipley" <phillip_shipley@sil.org>
 
 ENV REFRESHED_AT 2017-02-27
