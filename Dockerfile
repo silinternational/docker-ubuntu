@@ -5,7 +5,10 @@ ENV REFRESHED_AT 2017-02-27
 
 RUN apt-get update -y \
     && apt-get upgrade -y \
-    && apt-get install -y curl \
+    && apt-get install -y \
+       curl \
+       rsyslog \
+       rsyslog-gnutls \
     && apt-get clean
 
 # Install s3-expand into path
