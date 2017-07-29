@@ -19,5 +19,6 @@ RUN curl -o /usr/local/bin/s3-expand https://raw.githubusercontent.com/silintern
 RUN curl -o /usr/local/bin/runny https://raw.githubusercontent.com/silinternational/runny/0.1/runny \
     && chmod a+x /usr/local/bin/runny
 
+RUN rm -f /etc/rsyslog.d/*
 COPY rsyslog.conf /etc/rsyslog.conf
 COPY setup-logentries.sh /usr/local/bin/setup-logentries.sh
