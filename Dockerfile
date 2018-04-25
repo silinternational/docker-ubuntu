@@ -16,7 +16,7 @@ RUN curl -o /usr/local/bin/s3-expand https://raw.githubusercontent.com/silintern
     && chmod a+x /usr/local/bin/s3-expand
 
 # Install runny into path
-RUN curl -o /usr/local/bin/runny https://raw.githubusercontent.com/silinternational/runny/0.1/runny \
+RUN curl -o /usr/local/bin/runny https://raw.githubusercontent.com/silinternational/runny/0.2/runny \
     && chmod a+x /usr/local/bin/runny
 
 RUN rm -f /etc/rsyslog.d/*
