@@ -1,7 +1,7 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 MAINTAINER "Phillip Shipley" <phillip_shipley@sil.org>
 
-ENV REFRESHED_AT 2017-02-27
+ENV REFRESHED_AT 2018-07-02
 
 RUN apt-get update -y \
     && apt-get upgrade -y \
