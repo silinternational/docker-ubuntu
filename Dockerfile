@@ -26,6 +26,3 @@ RUN rm -f /etc/rsyslog.d/*
 
 COPY rsyslog.conf /etc/rsyslog.conf
 COPY setup-logentries.sh /usr/local/bin/setup-logentries.sh
-
-# Ensure file exists to satisfy pam_env (esp. for cron jobs).
-RUN touch /etc/default/locale
