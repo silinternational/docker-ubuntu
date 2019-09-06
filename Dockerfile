@@ -5,6 +5,7 @@ ENV REFRESHED_AT 2019-09-05
 
 RUN apt-get update -y \
     && apt-get upgrade -y \
+# Install some basic things
     && apt-get install -y \
        curl \
        rsyslog \
@@ -16,7 +17,8 @@ RUN apt-get update -y \
     && update-locale LANG="en_US.UTF-8" \
     && update-locale LANGUAGE="en_US:en" \
     && update-locale LC_ALL="en_US.UTF-8" \
-# removing locales triggers issues, so leaving installed for 16.04
+# removing locales causes issues
+# Clean up to reduce docker image size
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
@@ -32,5 +34,6 @@ RUN curl -o /usr/local/bin/runny https://raw.githubusercontent.com/silinternatio
     && chmod a+x /usr/local/bin/runny
 
 RUN rm -f /etc/rsyslog.d/*
+
 COPY rsyslog.conf /etc/rsyslog.conf
 COPY setup-logentries.sh /usr/local/bin/setup-logentries.sh
