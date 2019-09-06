@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 MAINTAINER "Phillip Shipley" <phillip_shipley@sil.org>
 
-ENV REFRESHED_AT 2017-02-27
+ENV REFRESHED_AT 2019-09-05
 
 RUN apt-get update -y \
     && apt-get upgrade -y \
@@ -9,7 +9,19 @@ RUN apt-get update -y \
        curl \
        rsyslog \
        rsyslog-gnutls \
-    && apt-get clean
+# Install locale
+       locales \
+# Actually set up the /etc/default/locale file to match
+    && locale-gen en_US.UTF-8 \
+    && update-locale LANG="en_US.UTF-8" \
+    && update-locale LANGUAGE="en_US:en" \
+    && update-locale LC_ALL="en_US.UTF-8" \
+# removing locales triggers issues, so leaving installed for 16.04
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set up default locale environment variables
+ENV LANG="en_US.UTF-8" LANGUAGE="en_US:en" LC_ALL="en_US.UTF-8"
 
 # Install s3-expand into path
 RUN curl -o /usr/local/bin/s3-expand https://raw.githubusercontent.com/silinternational/s3-expand/master/expand.sh \
@@ -22,6 +34,3 @@ RUN curl -o /usr/local/bin/runny https://raw.githubusercontent.com/silinternatio
 RUN rm -f /etc/rsyslog.d/*
 COPY rsyslog.conf /etc/rsyslog.conf
 COPY setup-logentries.sh /usr/local/bin/setup-logentries.sh
-
-# Ensure file exists to satisfy pam_env (esp. for cron jobs).
-RUN touch /etc/default/locale
