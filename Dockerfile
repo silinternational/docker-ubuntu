@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:21.04
 MAINTAINER "Phillip Shipley" <phillip_shipley@sil.org>
 
 ENV REFRESHED_AT 2021-06-04
