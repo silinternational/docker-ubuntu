@@ -4,7 +4,6 @@ MAINTAINER "Phillip Shipley" <phillip_shipley@sil.org>
 ENV REFRESHED_AT 2021-06-04
 
 RUN apt-get update -y \
-    && apt-get upgrade -y \
 # Install some basic things
     && apt-get install -y \
        curl \
