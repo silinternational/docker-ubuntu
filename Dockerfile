@@ -1,7 +1,7 @@
 FROM ubuntu:21.04
 MAINTAINER "Phillip Shipley" <phillip_shipley@sil.org>
 
-ENV REFRESHED_AT 2021-06-04
+ENV REFRESHED_AT 2021-06-07
 
 RUN apt-get update -y \
 # Install some basic things
