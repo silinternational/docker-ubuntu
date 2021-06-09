@@ -1,5 +1,5 @@
 FROM ubuntu:20.04
-MAINTAINER "Phillip Shipley" <phillip_shipley@sil.org>
+LABEL maintainer="matt_henderson@sil.org"
 
 ENV REFRESHED_AT 2021-06-04
 
