@@ -1,12 +1,15 @@
 FROM ubuntu:21.04
 MAINTAINER "Phillip Shipley" <phillip_shipley@sil.org>
 
-ENV REFRESHED_AT 2021-06-07
+ENV REFRESHED_AT 2021-06-09
 
 RUN apt-get update -y \
 # Install some basic things
     && apt-get install -y \
        curl \
+# Install gpgv2 to address runc 1.0.0-rc93 problem
+       gpgv \
+       gpgv2 \
 # Install locale
        locales \
 # Actually set up the /etc/default/locale file to match
