@@ -7,9 +7,6 @@ RUN apt-get update -y \
 # Install some basic things
     && apt-get install -y \
        curl \
-# Install gpgv2 to address runc 1.0.0-rc93 problem
-       gpgv \
-       gpgv2 \
 # Install locale
        locales \
 # Actually set up the /etc/default/locale file to match
