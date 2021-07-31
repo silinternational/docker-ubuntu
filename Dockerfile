@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:xenial-20210416
 MAINTAINER "Phillip Shipley" <phillip_shipley@sil.org>
 
 ENV REFRESHED_AT 2019-09-05
