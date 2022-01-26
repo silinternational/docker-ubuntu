@@ -1,7 +1,7 @@
 FROM ubuntu:20.04
 LABEL maintainer="matt_henderson@sil.org"
 
-ENV REFRESHED_AT 2021-06-09
+ENV REFRESHED_AT 2022-01-26
 
 RUN apt-get update -y \
 # Install some basic things
