@@ -1,0 +1,4 @@
+ubuntu:
+  build:
+    image: silintl/ubuntu
+    dockerfile_path: ./Dockerfile
