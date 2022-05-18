@@ -1,7 +1,7 @@
-FROM ubuntu:21.04
-LABEL maintainer="matt_henderson@sil.org"
+FROM ubuntu:22.04
+LABEL maintainer="jason_jackson@sil.org"
 
-ENV REFRESHED_AT 2021-06-09
+ENV REFRESHED_AT 2022-05-18
 
 RUN apt-get update -y \
 # Install some basic things
