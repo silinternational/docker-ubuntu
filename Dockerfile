@@ -13,7 +13,7 @@ RUN apt-get update -y \
     && locale-gen en_US.UTF-8 \
     && update-locale LANG="en_US.UTF-8" \
     && update-locale LANGUAGE="en_US:en" \
-    && update-locale LC_ALL="en_US.UTF-8"
+    && update-locale LC_ALL="en_US.UTF-8" \
 # removing locales causes issues
 # Clean up to reduce docker image size
     && apt-get clean \
